@@ -1,7 +1,12 @@
-export const Login = () => {
+import { SignIn } from "@/components/User/SignIn";
+import "./style.scss";
+
+export const Login = (): JSX.Element => {
     return (
-        <div>
-            Page de connexion
-        </div>
-    )
+        <main className="bg-dark">
+            <section id="sign-in" className="sign-in">
+                <SignIn />
+            </section>
+        </main>
+    );
 }
