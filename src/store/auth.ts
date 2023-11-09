@@ -27,9 +27,16 @@ export const auth = createSlice({
             state.lastName = "";
             state.email = "";
         },
+
+        editUser: (state: User, action: PayloadAction<any>) => {
+            const userObject: User = action.payload;
+            state.email = userObject.email ?? state.email;
+            state.firstName = userObject.firstName ?? state.firstName;
+            state.lastName = userObject.lastName ?? state.lastName;
+        },
     },
 });
 
-export const { setToken, setRemember, logout } = auth.actions;
+export const { setToken, setRemember, logout, editUser } = auth.actions;
 
 export default auth.reducer;
